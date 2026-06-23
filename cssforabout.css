@@ -1,0 +1,125 @@
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* BODY */
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: #0a0a0a;
+  color: #fff;
+  line-height: 1.6;
+}
+
+/* NAVIGATION */
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 18px 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(0,0,0,0.7);
+  backdrop-filter: blur(10px);
+  z-index: 1000;
+}
+
+nav .logo {
+  font-size: 14px;
+  letter-spacing: 3px;
+  font-weight: bold;
+}
+
+nav ul {
+  display: flex;
+  gap: 25px;
+  list-style: none;
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 13px;
+  opacity: 0.8;
+  transition: 0.3s;
+}
+
+nav ul li a:hover {
+  opacity: 1;
+}
+
+/* ABOUT PAGE WRAPPER */
+.about-page {
+  padding: 140px 20px 80px;
+}
+
+/* CONTAINER */
+.about-container {
+  max-width: 850px;
+  margin: auto;
+  text-align: center;
+}
+
+/* MAIN HEADING */
+.about-container h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  letter-spacing: 2px;
+}
+
+/* SUB HEADINGS */
+.about-container h2 {
+  margin-top: 40px;
+  font-size: 1.8rem;
+  color: #ffffff;
+}
+
+/* PARAGRAPHS */
+.about-container p {
+  margin-top: 15px;
+  color: #ccc;
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+/* LIST */
+.about-container ul {
+  margin-top: 15px;
+  list-style: none;
+}
+
+.about-container ul li {
+  padding: 6px 0;
+  color: #aaa;
+  font-size: 14px;
+}
+
+/* HOVER EFFECT (optional polish) */
+.about-container p,
+.about-container li {
+  transition: 0.3s;
+}
+
+.about-container p:hover,
+.about-container li:hover {
+  color: #fff;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  nav {
+    padding: 15px 20px;
+  }
+
+  .about-container h1 {
+    font-size: 2.2rem;
+  }
+
+  .about-container h2 {
+    font-size: 1.4rem;
+  }
+}

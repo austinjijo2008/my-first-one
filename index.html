@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Editorial Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <div class="logo">MY FIRST ONE</div>
+    <ul>
+      <li><a href="work.html" onclick="showSection('work')">Work</a></li>
+      <li><a href="about.html" onclick="showSection('about')">About</a></li>
+      <li><a href="#" onclick="openContact()">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- ⭐ WORK SECTION (DEFAULT) -->
+  <section id="work" class="page-section active">
+
+    <!-- HERO -->
+    <section class="hero reveal"> 
+      <img src="https://i.postimg.cc/pL7CCvzt/coverpic.png" alt="Photography 1">
+
+      <div class="overlay">
+        <h1>Luxury Editorial<br>Photography</h1>
+        <p>
+          A curated collection of visual narratives exploring fashion, light,
+          and form through a minimalist editorial lens.
+        </p>
+      </div>
+    </section>
+
+    <!-- SECTION 1 -->
+    <section class="section reveal">
+      <img src="https://i.postimg.cc/T1CqDvfB/image1.png" alt="Photography 1">
+      <div class="overlay">
+        <h2>Noir Collection</h2>
+        <p>High contrast editorial series inspired by monochrome elegance.</p>
+      </div>
+    </section>
+
+    <!-- SECTION 2 -->
+    <section class="section reveal">
+      <img src="https://i.postimg.cc/C1MRfB58/image2.png" alt="Photography 2">
+      <div class="overlay">
+        <h2>Winter Light</h2>
+        <p>Soft ambient tones exploring texture and natural light.</p>
+      </div>
+    </section>
+
+    <!-- SECTION 3 -->
+    <section class="section reveal">
+      <img src="https://i.postimg.cc/L8dh305C/image3.jpg" alt="trees">
+      <div class="overlay">
+        <h2>Mobile Photography</h2>
+        <p>Architecture meets fashion editorial storytelling.</p>
+      </div>
+    </section>
+
+    <!-- SECTION 4 -->
+    <section class="section reveal">
+      <img src="https://i.postimg.cc/SKksw2W2/image4.jpg" alt="sky">
+      <div class="overlay">
+        <h2>Beautiful Form of Sky</h2>
+        <p>Clean portrait series focusing on expression and form.</p>
+      </div>
+    </section>
+
+  </section>
+
+  <!-- ⭐ ABOUT SECTION (HIDDEN BY DEFAULT) -->
+  <section id="about" class="page-section">
+
+    <div class="about-box reveal">
+      <h2>About Me</h2>
+
+      <p>
+        I am a creative photographer focused on editorial storytelling, fashion visuals,
+        and cinematic compositions.
+      </p>
+
+      <p>
+        My work blends light, emotion, and minimalism to create strong visual narratives.
+      </p>
+
+      <div class="work-details">
+        <h3>My Work Details</h3>
+
+        <p><strong>Experience:</strong> 1+ Years</p>
+        <p><strong>Tools:</strong> Photoshop, Lightroom, Mobile Camera</p>
+        <p><strong>Effort Level:</strong> High creative planning + editing</p>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    © 2026 Editorial Portfolio — All Rights Reserved
+  </footer>
+
+  <!-- JS (TAB SWITCH) -->
+  <script>
+    function showSection(sectionId) {
+      const sections = document.querySelectorAll('.page-section');
+
+      sections.forEach(sec => {
+        sec.classList.remove('active');
+      });
+
+      document.getElementById(sectionId).classList.add('active');
+    }
+
+    // default = WORK
+    window.onload = function () {
+      showSection('work');
+    };
+
+    // your animation code (kept)
+    const reveals = document.querySelectorAll('.reveal');
+
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('active');
+        }
+      });
+    }, {
+      threshold: 0.15
+    });
+
+    reveals.forEach(el => observer.observe(el));
+  </script>
+  <!-- CONTACT POPUP -->
+  <!-- CONTACT POPUP -->
+  <!-- CONTACT POPUP -->
+  <div id="contactModal" class="modal">
+
+  <span class="close-btn" onclick="closeContact()" style="cursor: pointer">&times;</span>
+
+  <h3>Contact Details</h3>
+
+  <p><strong>Name:</strong> Austin Jijo</p>
+  <p><strong>Address:</strong> Kolachel, Tamil Nadu, India</p>
+  <p><strong>Phone:</strong> 9876543210</p>
+
+  </div>
+
+  <script>
+  function openContact() {
+    document.getElementById("contactModal").style.display = "block";
+  }
+
+  function closeContact() {
+    document.getElementById("contactModal").style.display = "none";
+  }
+  </script>
+
+ </body>
+</html>
